@@ -12,7 +12,7 @@ import datetime               # Import de la date et heure
 # Pour faire une sauvegarde de plusieurs bases de données, créez un fichier nommé /backup/dbnames.txt et mettez les noms des bases de données un par ligne et assignez-les à la variable DB_NAME.
 
 
-DB_HOST = 'localhost'           # Nome de l'host
+DB_HOST = 'localhost'           # Nom de l'host
 DB_USER = 'adminuser'           # Nom de l'utilisateur de la base de donnée
 DB_USER_PASSWORD = 'root'       # Le mot de passe de l'utilisateur de la base de donnée
     #DB_NAME = '/backup/dbnames.txt'          # Fichier texte regroupant les noms des base de données 
