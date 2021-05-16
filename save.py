@@ -44,17 +44,17 @@ else:
     # Démarrage du processus de sauvegarde de la base de données. 
 if multi:                                         # Si multi = 1 alors ouvrir le fichier txt
        in_file = open(DB_NAME,"r")                
-       flength = len(in_file.readlines())         # Va lire les lignes qui sont présentes dans le fichier
+       length = len(in_file.readlines())         # Va lire les lignes qui sont présentes dans le fichier
        in_file.close()                            # Ferme le fichier
        i = 1                                      # on déclare une variable i
        dbfile = open(DB_NAME,"r")                 # On ouvre le fichier pour le lire
 
-       while i <= flength:          # Tant que i est inférieur ou égal (s'il y a une ligne dans le fichier txt)
+       while i <= length:          # Tant que i est inférieur ou égal (s'il y a une ligne dans le fichier txt)
            db = dbfile.readline()   # lecture du nom de la base de données à partir du fichier 
            db = db[:-1]             # supprime les lignes supplémentaires 
            dumpcmd = "mysqldump -u " + DB_USER + " -p" + DB_USER_PASSWORD + " " + db + " > " + TODAYBACKUPPATH + "/" + db + ".sql"   # Fonction dump qui va permettre de générer le fichier de sauvegarde
            os.system(dumpcmd)       # Execute la commande dumpcmd
-           i++                      # On incrémente la valeur
+           i = i + 1                      # On incrémente la valeur
        dbfile.close()               # On ferme le ficher
 else:                               # Sinon
        db = DB_NAME                 # On prend la seul Base de donnée disponible (ou bien celle que l'on a ajouter au début)
